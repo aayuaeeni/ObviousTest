@@ -15,6 +15,7 @@ fun AppCompatImageView.loadImageFromUrl(imageUrl: String?) {
     }else{
         Glide.with(this)
             .load(imageUrl)
+            .placeholder(R.drawable.placeholder)
             .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
             .centerCrop()
             .into(this)
