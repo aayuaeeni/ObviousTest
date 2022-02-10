@@ -22,3 +22,19 @@ fun AppCompatImageView.loadImageFromUrl(imageUrl: String?) {
     }
 }
 
+fun AppCompatImageView.loadImageFromUrlWithoutPlaceholder(imageUrl: String?) {
+
+    if (imageUrl.isNullOrEmpty()){
+        Glide.with(this)
+            .load(R.drawable.placeholder)
+            .centerCrop()
+            .into(this)
+    }else{
+        Glide.with(this)
+            .load(imageUrl)
+            .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+            .centerCrop()
+            .into(this)
+    }
+}
+
