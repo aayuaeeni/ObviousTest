@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeActivity">
+    <include
+        android:id="@+id/rlTopView"
+        layout="@layout/common_top_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_38sdp" />
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlTopView">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvImages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:overScrollMode="never"
+            android:background="@color/white" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <include
+        android:id="@+id/loaderView"
+        layout="@layout/loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>
